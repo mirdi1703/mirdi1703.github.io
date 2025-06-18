@@ -1,0 +1,321 @@
+@font-face {
+    font-family: 'RussoOne';
+    src: url('../assets/RussoOne-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RussoOne';
+    src: url('../assets/RussoOne-Regular.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'RussoOne', sans-serif;
+  color: white;
+  line-height: 1.5;
+}
+
+body {
+  background: linear-gradient(to bottom, #0a0a0a, #1f1f1f);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header{
+    padding-top: 15px;
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+    background-color: #1a1a1a;
+}
+
+header img{
+    width: 15%;
+    height: auto;
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    column-gap: 5%;
+    justify-content: center;
+    font-size: 20px;
+    padding: 15px 0 15px 0;
+}
+
+.navigation a{
+    text-decoration: none;
+    color: white;
+}
+
+.navigation a:hover {
+  color: #ffaa00;
+}
+
+main {
+  flex: 1;
+  padding: 40px;
+  background-image: url('../assets/AzureWeald_Wallpaper16x9.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.calendar-section h1 {
+  text-align: center;
+  color: #ffaa00;
+  margin-bottom: 20px;
+}
+
+.calendar-section p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+.day {
+  background-color: #2b2b2b;
+  border: 2px solid #444;
+  border-radius: 6px;
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.day:hover {
+  color: rgba(0, 0, 0, 0);
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #ffaa00;
+}
+
+.day img.reward {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.day:hover img.reward {
+  opacity: 1;
+}
+
+.tasks {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #ffaa00;
+  box-shadow: 0 0 10px #ffaa00;
+}
+
+.tasks h2 {
+  color: #ffaa00;
+  margin-bottom: 10px;
+}
+
+.tasks ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.tasks li::before {
+  content: "✔ ";
+  color: #ffaa00;
+}
+
+footer{
+    background-color: #1a1a1a;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/*УВЕЛИЧЕНИЕ КАРТИНОК ПРИ НАВЕДЕНИИ*/
+header img {
+  transition: transform 0.3s ease-in-out;
+}
+
+header img:hover {
+  transform: scale(1.05);
+}
+
+/*ПУЛЬЗАЦИЯ ЛОГО*/
+@keyframes pulseLogo {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px #ffaa00);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px #ffaa00);
+  }
+}
+
+header img:hover {
+  animation: pulseLogo 1.5s infinite ease-in-out;
+}
+
+/* Мобильные устройства: до 600px */
+@media (max-width: 600px) {
+  header img {
+    width: 60%;
+  }
+
+  .navigation {
+    flex-direction: column;
+    font-size: 16px;
+    row-gap: 10px;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  .calendar-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+
+  .day {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .day img.reward {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tasks {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .tasks h2 {
+    font-size: 16px;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 15px;
+  }
+}
+
+/* Планшеты: 601–1024px */
+@media (min-width: 601px) and (max-width: 1024px) {
+  header img {
+    width: 30%;
+  }
+
+  .navigation {
+    font-size: 18px;
+  }
+
+  .calendar-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+  }
+
+  .day {
+    font-size: 16px;
+  }
+
+  .day img.reward {
+    width: 45px;
+    height: 45px;
+  }
+
+  .tasks {
+    padding: 20px;
+    font-size: 16px;
+  }
+}
+
+/* Десктоп: 1025px – 2560px */
+@media (min-width: 1025px) and (max-width: 2560px) {
+  header img {
+    width: 15%;
+  }
+
+  .calendar-grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+/* 4K и сверхширокие экраны */
+@media (min-width: 2560px) {
+  header {
+    font-size: 48px;
+  }
+
+  header img {
+    width: 10%;
+  }
+
+  .navigation {
+    font-size: 28px;
+    column-gap: 60px;
+  }
+
+  .calendar-grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 12px;
+    max-width: 1000px;
+  }
+
+  .calendar-section h1 {
+  font-size: 40px;
+}
+
+  .calendar-section p {
+  font-size: 30px;
+}
+
+  .day {
+    font-size: 20px;
+    padding: 20px;
+  }
+
+  .day img.reward {
+    width: 60px;
+    height: 60px;
+  }
+
+  .tasks {
+    font-size: 25px;
+    padding: 30px;
+    max-width: 1000px;
+  }
+
+  .tasks h2 {
+    font-size: 30px;
+  }
+
+  footer {
+    font-size: 18px;
+  }
+}

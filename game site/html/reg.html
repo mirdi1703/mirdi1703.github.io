@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/reg.css">
+  <link rel="icon" href="../assets/icon_logo.webp">
+  <title>Deep Rock Galactic - Регистрация</title>
+</head>
+<body>
+
+    <header>
+        <a href="../index.html"><img src="../assets/DRG_Logo.png"></a>
+        <div class="navigation">
+            <a href="../html/login.html">Вход</a>
+            <a href="../html/reg.html">Регистрация</a>
+            <a href="../html/calendar.html">Табель-календарь</a>
+        </div>
+    </header>
+
+  <main>
+    <div class="register-container">
+      <h1 class="terminal-title">СОЗДАНИЕ УЧЁТНОЙ ЗАПИСИ</h1>
+      <form id="registerForm">
+        <label for="newEmail">Почта</label>
+        <input type="text" id="newEmail" required placeholder="Ваша Почта">
+
+        <label for="newUsername">Позывной</label>
+        <input type="text" id="newUsername" required placeholder="Придумайте позывной">
+
+        <label for="newPassword">Код доступа</label>
+        <input type="password" id="newPassword" required placeholder="Придумайте код">
+
+        <label for="confirmPassword">Подтвердите код</label>
+        <input type="password" id="confirmPassword" required placeholder="Подтвердите код">
+
+
+        <button type="submit">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+        <p id="register-message"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+        <p>© 2020 GHOST SHIP GAMES</p>
+        <p>ВСЕ ТОВАРНЫЕ ЗНАКИ ЯВЛЯЮТСЯ СОБСТВЕННОСТЬЮ ИХ ВЛАДЕЛЬЦЕВ В РОССИИ И ДРУГИХ СТРАНАХ.</p>
+  </footer>
+
+  <script src="../js/reg.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="icon" href="../assets/icon_logo.webp">
+  <title>Deep Rock Galactic - Вход</title>
+</head>
+<body>
+
+    <header>
+        <a href="../index.html"><img src="../assets/DRG_Logo.png"></a>
+        <div class="navigation">
+            <a href="../html/login.html">Вход</a>
+            <a href="../html/reg.html">Регистрация</a>
+            <a href="../html/calendar.html">Табель-календарь</a>
+        </div>
+    </header>
+
+  <main>
+    <div class="login-container">
+      <div class="terminal-frame">
+        <h1 class="terminal-title">ДОСТУП К СИСТЕМЕ DRG</h1>
+        <form id="loginForm">
+          <label for="username">Позывной</label>
+          <input type="text" id="username" required placeholder="Введите позывной">
+
+          <label for="password">Код доступа</label>
+          <input type="password" id="password" required placeholder="Введите код">
+
+          <button type="submit">ПОДКЛЮЧИТЬСЯ</button>
+          <p id="error-message">⛔ Неверный позывной или код доступа!</p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+        <p>© 2020 GHOST SHIP GAMES</p>
+        <p>ВСЕ ТОВАРНЫЕ ЗНАКИ ЯВЛЯЮТСЯ СОБСТВЕННОСТЬЮ ИХ ВЛАДЕЛЬЦЕВ В РОССИИ И ДРУГИХ СТРАНАХ.</p>
+  </footer>
+
+  <script src="../js/login.js"></script>
+</body>
+</html>
